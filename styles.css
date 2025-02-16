@@ -1,71 +1,66 @@
-/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     color: black;
     text-align: center;
-    background: #eaf5d5; /* Light green background for all pages */
+    background: #eaf5d5;
     min-height: 100vh;
 }
 
 .homepage {
     background: url('background.jpg') no-repeat center center;
-    color: white; /* Ensures text is readable on homepage */
-    background-size: cover; /* Ensures the image covers the full screen */
+    color: white;
+    background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    height: 100vh; /* Makes the background fit the whole screen without scrolling */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; /* Keeps text aligned left */
-    padding: 20px 1%; /* Adjusts text position */
+    align-items: flex-start;
+    padding: 20px 1%;
     box-sizing: border-box;
 }
 
-/* Navbar Styling */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background: #f5f5dc; /* Soft beige background */
+    background: #f5f5dc;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-sizing: border-box; /* Ensures padding doesn’t extend width */
-    max-width: 100vw; /* Prevents overflow */
+    box-sizing: border-box;
+    max-width: 100vw;
     overflow-x: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Hero Section - Left Aligned Hero, Centered Text & Buttons */
 .hero {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; /* Keeps section content aligned left */
-    text-align: left; /* Ensures main text stays aligned left */
+    align-items: flex-start;
+    text-align: left;
     padding: 20px 10%;
     max-width: 80%;
-    height: 100vh; /* Full screen height */
+    height: 100vh;
 }
 
-/* Centered Text and Buttons */
 .hero h1, .hero p, .buttons {
     text-align: center;
-    width: 100%; /* Ensures proper alignment */
-    margin: 0 auto; /* Centering */
+    width: 100%;
+    margin: 0 auto;
 }
 
-/* Buttons Styling */
 .buttons {
     display: flex;
-    justify-content: center; /* Center buttons */
-    gap: 20px; /* Adds space between buttons */
+    justify-content: center;
+    gap: 20px;
     margin-top: 20px;
 }
 
@@ -86,16 +81,15 @@ header {
     background: #547349;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .hero {
-        align-items: center; /* Center on mobile */
+        align-items: center;
         text-align: center;
         padding: 20px;
     }
 
     .buttons {
-        flex-direction: column; /* Stack buttons on small screens */
+        flex-direction: column;
         align-items: center;
     }
 }
@@ -121,7 +115,7 @@ header {
 nav {
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* Ensures items wrap if too wide */
+    flex-wrap: wrap;
 }
 
 nav ul {
@@ -129,7 +123,7 @@ nav ul {
     display: flex;
     padding: 0;
     margin: 0;
-    flex-wrap: wrap; /* Ensures items adjust on small screens */
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -145,21 +139,20 @@ nav ul li a {
 }
 
 .book-now {
-    background: #6a8e5a; /* Green button */
+    background: #6a8e5a;
     color: white;
     padding: 10px 15px;
     border-radius: 20px;
     text-decoration: none;
     font-weight: bold;
     margin-left: 10px;
-    white-space: nowrap; /* Prevents button text from wrapping */
+    white-space: nowrap;
 }
 
 .book-now:hover {
     background: #547349;
 }
 
-/* Responsive Fix */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -187,8 +180,6 @@ nav ul li a {
     }
 }
 
-
-/* Hero Section */
 .hero {
     padding: 100px 20px;
 }
@@ -202,7 +193,6 @@ nav ul li a {
     margin: 20px 0;
 }
 
-/* Buttons */
 .buttons {
     margin-top: 20px;
 }
@@ -220,7 +210,7 @@ nav ul li a {
 .call-btn:hover, .email-btn:hover {
     background: #547349;
 }
-/* Team Page Layout */
+
 .team-container {
     text-align: center;
     padding: 50px 20px;
@@ -234,26 +224,22 @@ nav ul li a {
     margin: auto;
 }
 
-/* Team Member Box */
 .team-member {
-    background: #dff0c4; /* Light green background */
+    background: #dff0c4;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Team Images - Ensure Circular Shape */
 .team-member img {
-    width: 120px; /* Adjust size as needed */
-    height: 120px; /* Ensure perfect square */
-    object-fit: cover; /* Ensures images maintain correct aspect ratio */
-    border-radius: 50%; /* Makes the images circular */
-    border: 3px solid #6a8e5a; /* Optional: Adds a green border */
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #6a8e5a;
 }
 
-
-/* Styling for Text */
 .team-member h2 {
     font-size: 1.5em;
     margin-top: 10px;
@@ -265,20 +251,18 @@ nav ul li a {
     color: #555;
 }
 
-/* Responsive Design */
 @media (max-width: 900px) {
     .team-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 600px) {
     .team-grid {
-        grid-template-columns: 1fr; /* Stacks to 1 column on small screens */
+        grid-template-columns: 1fr;
     }
 }
 
-/* Booking Page Styling */
 .booking-container {
     width: 50%;
     margin: 80px auto;
@@ -288,7 +272,7 @@ nav ul li a {
     text-align: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
-/* Booking Form Layout */
+
 .input-group {
     display: flex;
     align-items: center;
@@ -297,7 +281,6 @@ nav ul li a {
     text-align: left;
 }
 
-/* Labels: Align to the left and set width */
 .input-group label {
     width: 30%;
     font-size: 1.2em;
@@ -307,7 +290,6 @@ nav ul li a {
     padding-right: 10px;
 }
 
-/* Inputs & Select Fields: Ensure full width */
 .input-group input,
 .input-group select {
     width: 100%;
@@ -319,7 +301,6 @@ nav ul li a {
     display: block;
 }
 
-/* Fix dropdown width issue */
 .input-group select {
     background: white;
     border: 2px solid #6a8e5a;
@@ -329,7 +310,6 @@ nav ul li a {
     padding-right: 40px;
 }
 
-/* Make sure form stays responsive */
 @media (max-width: 768px) {
     .booking-container {
         width: 80%;
@@ -352,7 +332,6 @@ nav ul li a {
     }
 }
 
-/* Fix Book Now Button */
 .book-btn {
     background: #6a8e5a;
     color: white;
@@ -363,8 +342,8 @@ nav ul li a {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
-    width: 100%;  /* Ensures button spans the full width */
-    display: block;  /* Ensures proper alignment */
+    width: 100%;
+    display: block;
     text-align: center;
     margin-top: 10px;
 }
@@ -372,17 +351,16 @@ nav ul li a {
 .book-btn:hover {
     background: #547349;
 }
-/* Location Page Layout */
+
 .location-container {
     display: flex;
-    align-items: center;  /* Centers content vertically */
+    align-items: center;
     justify-content: space-between;
     padding: 40px;
     gap: 20px;
-    margin-top: 100px; /* Pushes the map and text down */
+    margin-top: 100px;
 }
 
-/* Centered Map on Left */
 .map-container {
     flex: 1;
     max-width: 60%;
@@ -391,7 +369,6 @@ nav ul li a {
     justify-content: center;
 }
 
-/* Align Text with Map */
 .contact-info {
     flex: 1;
     max-width: 40%;
@@ -399,15 +376,14 @@ nav ul li a {
     color: #333;
     display: flex;
     flex-direction: column;
-    justify-content: center;  /* Centers text vertically */
+    justify-content: center;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .location-container {
         flex-direction: column;
         align-items: center;
-        margin-top: 80px; /* Adjust margin for smaller screens */
+        margin-top: 80px;
     }
 
     .map-container, .contact-info {
@@ -415,7 +391,7 @@ nav ul li a {
         text-align: center;
     }
 }
-/* Services Page Layout */
+
 .services-container {
     text-align: center;
     padding: 50px 20px;
@@ -429,24 +405,21 @@ nav ul li a {
     margin: auto;
 }
 
-/* Individual Service Box */
 .service {
-    background: #dff0c4; /* Light green background */
+    background: #dff0c4;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Service Images - Fixing Size */
 .service img {
     width: 100%;
-    height: 200px; /* Ensures all images have the same height */
-    object-fit: cover; /* Ensures images scale properly without distortion */
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
 }
 
-/* Styling for Text */
 .service h2 {
     font-size: 1.5em;
     margin-top: 10px;
@@ -458,20 +431,18 @@ nav ul li a {
     color: #555;
 }
 
-/* Responsive Design */
 @media (max-width: 900px) {
     .services-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 600px) {
     .services-grid {
-        grid-template-columns: 1fr; /* Stacks to 1 column on small screens */
+        grid-template-columns: 1fr;
     }
 }
 
-/* Reviews Page Layout */
 .reviews-container {
     text-align: center;
     padding: 50px 20px;
@@ -485,44 +456,38 @@ nav ul li a {
     margin: auto;
 }
 
-/* Individual Review Card */
 .review-card {
-    background: #dff0c4; /* Light green background */
+    background: #dff0c4;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Reviewer Images */
 .review-card img {
     width: 80px; 
     height: 80px; 
     object-fit: cover; 
-    border-radius: 50%; /* Circular images */
+    border-radius: 50%;
     margin-bottom: 10px;
 }
 
-/* Reviewer Name */
 .review-card h2 {
     font-size: 1.3em;
     margin: 5px 0;
 }
 
-/* Star Ratings */
 .review-card p:first-of-type {
     font-size: 1.5em;
     color: gold;
     margin-bottom: 10px;
 }
 
-/* Review Text */
 .review-card p:last-of-type {
     font-size: 1em;
     color: #555;
 }
 
-/* Responsive Design */
 @media (max-width: 900px) {
     .reviews-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -535,7 +500,6 @@ nav ul li a {
     }
 }
 
-/* Ensure the language button matches other nav links */
 #language-btn {
     background: none;
     border: none;
@@ -553,13 +517,12 @@ nav ul li a {
     color: #6a8e5a;
 }
 
-/* Fix alignment issues in nav */
 nav ul {
     list-style: none;
     display: flex;
     padding: 0;
     margin: 0;
-    align-items: center;  /* Aligns everything properly */
+    align-items: center;
 }
 
 nav ul li {
