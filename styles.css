@@ -534,3 +534,37 @@ nav ul li a {
         grid-template-columns: 1fr;
     }
 }
+
+/* Ensure the language button matches other nav links */
+#language-btn {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+    font-family: "Georgia", serif;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+    padding: 5px 10px;
+}
+
+#language-btn:hover {
+    color: #6a8e5a;
+}
+
+/* Fix alignment issues in nav */
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    align-items: center;  /* Aligns everything properly */
+}
+
+nav ul li {
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+}
+

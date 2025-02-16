@@ -15,12 +15,12 @@
     </div>
     <nav>
         <ul>
+            <li><button id="language-btn" onclick="switchToFrench()">🇫🇷 Français</button></li>
             <li><a href="index.html">Home</a></li>
             <li><a href="location.html">Location</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="team.html">Meet Our Team</a></li>
             <li><a href="reviews.html">Reviews</a></li>
-
         </ul>
         <a href="booking.html" class="book-now">Book Now</a>
     </nav>
@@ -34,7 +34,6 @@
             width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy">
         </iframe>
     </div>
-    
 
     <div class="contact-info">
         <h1>Calm Care Counseling</h1>
@@ -50,6 +49,12 @@
         <p><strong>Weekends & Holidays:</strong> 09:00 AM – 01:00 PM</p>
     </div>
 </section>
+
+<script>
+    function switchToFrench() {
+        window.location.href = "location-fr.html"; // Redirect to French page
+    }
+</script>
 
 </body>
 </html>
