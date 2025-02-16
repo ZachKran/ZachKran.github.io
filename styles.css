@@ -3,24 +3,103 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: url('background.jpg') no-repeat center center/cover;
-    color: #fff;
+    color: black;
     text-align: center;
+    background: #eaf5d5; /* Light green background for all pages */
+    min-height: 100vh;
 }
+
+.homepage {
+    background: url('background.jpg') no-repeat center center;
+    color: white; /* Ensures text is readable on homepage */
+    background-size: cover; /* Ensures the image covers the full screen */
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh; /* Makes the background fit the whole screen without scrolling */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Keeps text aligned left */
+    padding: 20px 1%; /* Adjusts text position */
+    box-sizing: border-box;
+}
+
 /* Navbar Styling */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
+    padding: 15px 20px;
     background: #f5f5dc; /* Soft beige background */
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
+    box-sizing: border-box; /* Ensures padding doesn’t extend width */
+    max-width: 100vw; /* Prevents overflow */
+    overflow-x: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* Hero Section - Left Aligned Hero, Centered Text & Buttons */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Keeps section content aligned left */
+    text-align: left; /* Ensures main text stays aligned left */
+    padding: 20px 10%;
+    max-width: 80%;
+    height: 100vh; /* Full screen height */
+}
+
+/* Centered Text and Buttons */
+.hero h1, .hero p, .buttons {
+    text-align: center;
+    width: 100%; /* Ensures proper alignment */
+    margin: 0 auto; /* Centering */
+}
+
+/* Buttons Styling */
+.buttons {
+    display: flex;
+    justify-content: center; /* Center buttons */
+    gap: 20px; /* Adds space between buttons */
+    margin-top: 20px;
+}
+
+.call-btn, .email-btn {
+    display: inline-block;
+    background: #6a8e5a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+}
+
+.call-btn:hover, .email-btn:hover {
+    background: #547349;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        align-items: center; /* Center on mobile */
+        text-align: center;
+        padding: 20px;
+    }
+
+    .buttons {
+        flex-direction: column; /* Stack buttons on small screens */
+        align-items: center;
+    }
+}
+
 
 .logo {
     display: flex;
@@ -28,7 +107,7 @@ header {
 }
 
 .logo img {
-    width: 50px; /* Adjust based on your logo */
+    width: 50px;
     margin-right: 10px;
 }
 
@@ -42,6 +121,7 @@ header {
 nav {
     display: flex;
     align-items: center;
+    flex-wrap: wrap; /* Ensures items wrap if too wide */
 }
 
 nav ul {
@@ -49,10 +129,11 @@ nav ul {
     display: flex;
     padding: 0;
     margin: 0;
+    flex-wrap: wrap; /* Ensures items adjust on small screens */
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 nav ul li a {
@@ -70,11 +151,40 @@ nav ul li a {
     border-radius: 20px;
     text-decoration: none;
     font-weight: bold;
-    margin-left: 20px;
+    margin-left: 10px;
+    white-space: nowrap; /* Prevents button text from wrapping */
 }
 
 .book-now:hover {
     background: #547349;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .book-now {
+        margin-top: 10px;
+    }
 }
 
 
@@ -110,36 +220,317 @@ nav ul li a {
 .call-btn:hover, .email-btn:hover {
     background: #547349;
 }
-
-/* Team Page Styling */
+/* Team Page Layout */
 .team-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 40px 20px;
+    text-align: center;
+    padding: 50px 20px;
 }
 
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Team Member Box */
 .team-member {
-    background: rgba(255, 255, 255, 0.9);
+    background: #dff0c4; /* Light green background */
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    max-width: 300px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Team Images - Ensure Circular Shape */
 .team-member img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+    width: 120px; /* Adjust size as needed */
+    height: 120px; /* Ensure perfect square */
+    object-fit: cover; /* Ensures images maintain correct aspect ratio */
+    border-radius: 50%; /* Makes the images circular */
+    border: 3px solid #6a8e5a; /* Optional: Adds a green border */
 }
 
+
+/* Styling for Text */
 .team-member h2 {
     font-size: 1.5em;
+    margin-top: 10px;
     color: #333;
 }
 
 .team-member p {
     font-size: 1em;
-    color: #666;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .team-grid {
+        grid-template-columns: 1fr; /* Stacks to 1 column on small screens */
+    }
+}
+
+/* Booking Page Styling */
+.booking-container {
+    width: 50%;
+    margin: 80px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Booking Form Layout */
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Labels: Align to the left and set width */
+.input-group label {
+    width: 30%;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+    padding-right: 10px;
+}
+
+/* Inputs & Select Fields: Ensure full width */
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f8f8f8;
+    display: block;
+}
+
+/* Fix dropdown width issue */
+.input-group select {
+    background: white;
+    border: 2px solid #6a8e5a;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 40px;
+}
+
+/* Make sure form stays responsive */
+@media (max-width: 768px) {
+    .booking-container {
+        width: 80%;
+    }
+
+    .input-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .input-group label {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    .input-group input,
+    .input-group select {
+        width: 100%;
+    }
+}
+
+/* Fix Book Now Button */
+.book-btn {
+    background: #6a8e5a;
+    color: white;
+    padding: 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;  /* Ensures button spans the full width */
+    display: block;  /* Ensures proper alignment */
+    text-align: center;
+    margin-top: 10px;
+}
+
+.book-btn:hover {
+    background: #547349;
+}
+/* Location Page Layout */
+.location-container {
+    display: flex;
+    align-items: center;  /* Centers content vertically */
+    justify-content: space-between;
+    padding: 40px;
+    gap: 20px;
+    margin-top: 100px; /* Pushes the map and text down */
+}
+
+/* Centered Map on Left */
+.map-container {
+    flex: 1;
+    max-width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Align Text with Map */
+.contact-info {
+    flex: 1;
+    max-width: 40%;
+    text-align: left;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centers text vertically */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .location-container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 80px; /* Adjust margin for smaller screens */
+    }
+
+    .map-container, .contact-info {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+/* Services Page Layout */
+.services-container {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Individual Service Box */
+.service {
+    background: #dff0c4; /* Light green background */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Service Images - Fixing Size */
+.service img {
+    width: 100%;
+    height: 200px; /* Ensures all images have the same height */
+    object-fit: cover; /* Ensures images scale properly without distortion */
+    border-radius: 10px;
+}
+
+/* Styling for Text */
+.service h2 {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: #333;
+}
+
+.service p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* Stacks to 1 column on small screens */
+    }
+}
+
+/* Reviews Page Layout */
+.reviews-container {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Individual Review Card */
+.review-card {
+    background: #dff0c4; /* Light green background */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Reviewer Images */
+.review-card img {
+    width: 80px; 
+    height: 80px; 
+    object-fit: cover; 
+    border-radius: 50%; /* Circular images */
+    margin-bottom: 10px;
+}
+
+/* Reviewer Name */
+.review-card h2 {
+    font-size: 1.3em;
+    margin: 5px 0;
+}
+
+/* Star Ratings */
+.review-card p:first-of-type {
+    font-size: 1.5em;
+    color: gold;
+    margin-bottom: 10px;
+}
+
+/* Review Text */
+.review-card p:last-of-type {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
 }
