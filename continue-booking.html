@@ -25,28 +25,27 @@
         <a href="booking.html" class="book-now">Book Now</a>
     </nav>
 </header>
-
 <section class="booking-container">
     <h1>Your Information</h1>
-    <form action="booking-confirmed.html" method="GET">
-        <div class="input-group">
-            <label for="first-name">First Name:</label>
-            <input type="text" id="first-name" name="first-name" placeholder="Name" required>
-        </div>
 
-        <div class="input-group">
-            <label for="last-name">Last Name:</label>
-            <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
-        </div>
+    <div class="input-group">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name" placeholder="Name">
+    </div>
 
-        <div class="input-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="email@email.com" required>
-        </div>
+    <div class="input-group">
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" placeholder="Last Name">
+    </div>
 
-        <button type="submit" class="book-btn">Continue Booking</button>
-    </form>
+    <div class="input-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="email@email.com">
+    </div>
+
+    <a href="booking-confirmed.html" class="book-btn">Continue Booking</a>
 </section>
+
 
 <script>
     function switchToFrench() {
