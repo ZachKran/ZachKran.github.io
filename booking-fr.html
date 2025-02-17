@@ -28,46 +28,46 @@
 
 <section class="booking-container">
     <h1>Prendre un Rendez-vous</h1>
-    <form action="continue-booking-fr.html" method="POST">
-        <div class="input-group">
-            <label for="date">Date :</label>
-            <input type="date" id="date" name="date" required>
-        </div>
 
-        <div class="input-group">
-            <label for="time">Heure :</label>
-            <input type="time" id="time" name="time" required>
-        </div>
+    <div class="input-group">
+        <label for="date">Date :</label>
+        <input type="date" id="date" name="date">
+    </div>
 
-        <div class="input-group">
-            <label for="service">En personne ou virtuel :</label>
-            <select id="service" name="service">
-                <option>En personne</option>
-                <option>Virtuel</option>
-            </select>
-        </div>
+    <div class="input-group">
+        <label for="time">Heure :</label>
+        <input type="time" id="time" name="time">
+    </div>
 
-        <div class="input-group">
-            <label for="service">Sélectionner un service :</label>
-            <select id="service" name="service">
-                <option>Thérapie individuelle</option>
-                <option>Thérapie de couple</option>
-                <option>Thérapie de groupe</option>
-            </select>
-        </div>
+    <div class="input-group">
+        <label for="service">En personne ou virtuel :</label>
+        <select id="service" name="service">
+            <option>En personne</option>
+            <option>Virtuel</option>
+        </select>
+    </div>
 
-        <div class="input-group">
-            <label for="therapist">Thérapeute :</label>
-            <select id="therapist" name="therapist">
-                <option>Emma Rivers</option>
-                <option>Lucas Wells</option>
-                <option>Sophia Hart</option>
-            </select>
-        </div>
+    <div class="input-group">
+        <label for="service-type">Sélectionner un service :</label>
+        <select id="service-type" name="service">
+            <option>Thérapie individuelle</option>
+            <option>Thérapie de couple</option>
+            <option>Thérapie de groupe</option>
+        </select>
+    </div>
 
-        <button type="submit" class="book-btn">Réserver</button>
-    </form>
+    <div class="input-group">
+        <label for="therapist">Thérapeute :</label>
+        <select id="therapist" name="therapist">
+            <option>Emma Rivers</option>
+            <option>Lucas Wells</option>
+            <option>Sophia Hart</option>
+        </select>
+    </div>
+
+    <a href="continue-booking-fr.html" class="book-btn">Réserver</a>
 </section>
+
 
 <script>
     function switchToEnglish() {

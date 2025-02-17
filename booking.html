@@ -25,48 +25,46 @@
         <a href="booking.html" class="book-now">Book Now</a>
     </nav>
 </header>
-
 <section class="booking-container">
     <h1>Book an Appointment</h1>
-    <form action="continue-booking.html" method="POST">
-        <div class="input-group">
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
-        </div>
 
-        <div class="input-group">
-            <label for="time">Time:</label>
-            <input type="time" id="time" name="time" required>
-        </div>
+    <div class="input-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date">
+    </div>
 
-        <div class="input-group">
-            <label for="service">In Person or Virtual:</label>
-            <select id="service" name="service">
-                <option>In Person</option>
-                <option>Virtual</option>
-            </select>
-        </div>
+    <div class="input-group">
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time">
+    </div>
 
-        <div class="input-group">
-            <label for="service">Select a Service:</label>
-            <select id="service" name="service">
-                <option>Individual Therapy</option>
-                <option>Couples Therapy</option>
-                <option>Group Therapy</option>
-            </select>
-        </div>
+    <div class="input-group">
+        <label for="service">In Person or Virtual:</label>
+        <select id="service" name="service">
+            <option>In Person</option>
+            <option>Virtual</option>
+        </select>
+    </div>
 
-        <div class="input-group">
-            <label for="therapist">Therapist:</label>
-            <select id="therapist" name="therapist">
-                <option>Emma Rivers</option>
-                <option>Lucas Wells</option>
-                <option>Sophia Hart</option>
-            </select>
-        </div>
+    <div class="input-group">
+        <label for="service">Select a Service:</label>
+        <select id="service-type" name="service">
+            <option>Individual Therapy</option>
+            <option>Couples Therapy</option>
+            <option>Group Therapy</option>
+        </select>
+    </div>
 
-        <button type="submit" class="book-btn">Book Now</button>
-    </form>
+    <div class="input-group">
+        <label for="therapist">Therapist:</label>
+        <select id="therapist" name="therapist">
+            <option>Emma Rivers</option>
+            <option>Lucas Wells</option>
+            <option>Sophia Hart</option>
+        </select>
+    </div>
+
+    <a href="continue-booking.html" class="book-btn">Book Now</a>
 </section>
 
 <script>
