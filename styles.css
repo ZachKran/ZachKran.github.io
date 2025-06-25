@@ -129,6 +129,20 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
+  .what-we-do {
+    background: #fff;
+    padding: 5rem 3rem;
+    border-radius: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    opacity: 0;
+    transform: translateY(300px);
+    animation: fadeSlideUp 0.6s ease forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+
   .blurb:hover,
   .price-card:hover,
   .team-member:hover {
@@ -295,3 +309,102 @@
     line-height: 1;
   }
   
+  .what-we-do {
+    max-width: 900px;
+    margin: 0 auto 4em;
+    padding: 2em;
+    background-color: #f8f8f8;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .what-we-do .mission-statement {
+    font-size: 1.1rem;
+    margin-bottom: 1.5em;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .stat-category {
+    margin-bottom: 2em;
+  }
+  
+  .stat-category h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5em;
+    color: #444;
+  }
+  
+  .custom-list {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+  }
+  
+  .custom-list li {
+    position: relative;
+    padding-left: 1.6em;
+    margin-bottom: 0.8em;
+    font-size: 1rem;
+    color: #3d3d3d;
+  }
+  
+  .custom-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    color: #b28b5e;
+    font-size: 1.2em;
+    line-height: 1;
+  }
+  
+  
+  .guarantee-section {
+    background-color: #f9f9f9;
+    padding: 3rem 1rem;
+    text-align: center;
+    border-top: 2px solid #eee;
+    margin-top: 2rem;
+}
+
+.guarantee-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.guarantee-content {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.guarantee-content strong {
+    color: #000;
+}
+
+.guarantee-content a {
+    color: #0073e6;
+    text-decoration: underline;
+}
+
+.guarantee-section {
+  background-color: #fafafa;
+  border-top: 2px solid #eee;
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+.contact-email {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.contact-email a {
+  color: #0073e6;
+  text-decoration: underline;
+}
