@@ -1,0 +1,82 @@
+/* Layout */
+.booking-section {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.booking-section h1 {
+  margin-bottom: 1rem;
+}
+
+/* Form */
+.booking-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.booking-section label {
+  font-weight: 600;
+}
+
+.booking-section input,
+.booking-section textarea {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.booking-section input:focus,
+.booking-section textarea:focus {
+  border-color: #0077cc;
+  box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.12);
+}
+
+/* Button (reuses your .book-now class name) */
+.booking-section .book-now {
+  align-self: start;
+  background: #0077cc;
+  color: #fff;
+  border: 0;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 80ms ease, background 120ms ease;
+}
+
+.booking-section .book-now:hover {
+  background: #005fa3;
+}
+
+.booking-section .book-now:active {
+  transform: translateY(1px);
+}
+
+/* Status text */
+.status {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.status.sending {
+  opacity: 0.9;
+}
+.status.success {
+  color: #1a7f37;
+}
+.status.error {
+  color: #b00020;
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .booking-section {
+    padding: 1.25rem;
+  }
+}
