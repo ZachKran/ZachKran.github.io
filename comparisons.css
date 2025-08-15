@@ -1,0 +1,228 @@
+/* ===========================
+   Palette & base
+   =========================== */
+:root {
+  --sand: #f6f1e8; /* page background */
+  --paper: #faf7f3; /* card background */
+  --stone: #e7dfd7; /* subtle borders */
+  --ink: #2a2a2a;
+  --muted: #595959;
+  --accent: #7b5cff; /* CTA accent */
+}
+
+body {
+  background: var(--sand);
+  color: var(--ink);
+}
+
+/* ===========================
+   Header tidy (optional)
+   =========================== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem clamp(1rem, 3vw, 2rem); /* keep this as your site’s side padding */
+}
+.site-header nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-header nav a {
+  text-decoration: none;
+  color: var(--ink);
+}
+.book-now {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.55rem 0.9rem;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+/* ===========================
+   Main wrapper
+   =========================== */
+.cmp-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2.5rem);
+}
+
+/* ===========================
+   INTRO (match navbar/content width)
+   =========================== */
+/* ===== Fix: make the intro card span the navbar/content width ===== */
+.cmp-intro {
+  max-width: 1100px; /* same as navbar/content */
+  margin: 0 auto clamp(1.5rem, 4vw, 2.6rem) auto;
+  padding: 0 clamp(1rem, 3vw, 2.5rem); /* same inner side padding as content */
+}
+
+.cmp-intro .cmp-card {
+  width: 100% !important; /* fill the 1100px container */
+  max-width: none !important; /* override the 560px limit */
+  margin: 0; /* no extra centering needed */
+  box-sizing: border-box; /* include padding in width */
+  text-align: center; /* keep hero text centered */
+}
+
+.cmp-intro h2 {
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+}
+.cmp-intro p {
+  max-width: 1100px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* ===========================
+   Collage blocks (inspo style)
+   =========================== */
+.cmp-block {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr; /* bigger image tile */
+  align-items: center;
+  gap: clamp(0.5rem, 1.6vw, 1rem); /* tighter gap between image & text */
+  margin-block: clamp(1.1rem, 3vw, 2rem); /* tighter row spacing */
+  position: relative;
+}
+
+/* Alternate layout for middle row */
+.cmp-block.cmp-reverse {
+  grid-template-columns: 1fr 1.15fr;
+}
+.cmp-reverse .cmp-media {
+  order: 2;
+}
+.cmp-reverse .cmp-card {
+  order: 1;
+}
+
+/* ===== Image tile ===== */
+.cmp-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+.cmp-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+/* ===== Text card ===== */
+.cmp-card {
+  background: var(--paper);
+  border: 1px solid var(--stone);
+  border-radius: 14px;
+  padding: clamp(1rem, 3vw, 1.6rem);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.06);
+  color: var(--ink);
+  position: relative;
+  z-index: 2;
+  max-width: 560px; /* normal cards keep this max width */
+}
+.cmp-card h2 {
+  margin: 0 0 0.4rem 0;
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  letter-spacing: 0.2px;
+}
+.cmp-card p {
+  margin: 0 0 0.75rem 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.cmp-points {
+  margin: 0.35rem 0 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+.cmp-points li {
+  margin: 0.25rem 0;
+}
+
+/* Subtle accent for your offer */
+.cmp-card.cmp-accent {
+  background: #fff;
+  border-color: var(--stone);
+}
+
+/* CTA */
+.cmp-cta {
+  display: inline-block;
+  margin-top: 0.9rem;
+  padding: 0.6rem 0.95rem;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: transform 0.08s ease, opacity 0.12s ease;
+}
+.cmp-cta:hover {
+  opacity: 0.92;
+}
+.cmp-cta:active {
+  transform: translateY(1px);
+}
+
+/* ===== Overlap effect (desktop) ===== */
+@media (min-width: 900px) {
+  .cmp-block:not(.cmp-reverse) .cmp-card {
+    margin-left: -50px;
+    transform: translateY(-6px);
+  }
+  .cmp-block.cmp-reverse .cmp-card {
+    margin-right: -50px;
+    transform: translateY(-6px);
+  }
+  .cmp-block:not(.cmp-reverse) .cmp-media {
+    transform: translateX(6px);
+  }
+  .cmp-block.cmp-reverse .cmp-media {
+    transform: translateX(-6px);
+  }
+}
+
+/* ===== Fade-in on scroll ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Responsive stack ===== */
+@media (max-width: 899.98px) {
+  .cmp-block,
+  .cmp-block.cmp-reverse {
+    grid-template-columns: 1fr;
+  }
+  .cmp-media,
+  .cmp-card {
+    transform: none !important;
+    margin: 0;
+  }
+  .cmp-intro {
+    padding: 0 1.25rem;
+  }
+  .cmp-intro p {
+    max-width: 32ch;
+  }
+}
