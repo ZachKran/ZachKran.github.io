@@ -43,31 +43,23 @@
         ></button>
       </div>
 
-      <svg class="loopy-arrow" viewBox="0 0 260 140" aria-hidden="true">
-        <!-- smooth loopy swoosh pointing LEFT -->
+      <svg class="loopy-arrow" viewBox="0 0 320 180" aria-hidden="true">
+        <!-- Loopy curve -->
         <path
-          d="
-      M 240 45
-      C 190 10, 120 18, 120 55
-      C 120 95, 180 95, 190 65
-      C 200 35, 130 30, 85 55
-      C 45 80, 65 110, 120 95
-    "
+          d="M 290 65
+       C 235 10, 130 18, 140 85
+       C 150 145, 245 135, 252 88
+       C 260 35, 175 35, 110 85
+       C 55 125, 85 165, 155 145"
           fill="none"
           stroke="currentColor"
-          stroke-width="7"
+          stroke-width="9"
           stroke-linecap="round"
           stroke-linejoin="round"
         />
-        <!-- arrow head (LEFT) -->
-        <path
-          d="M 120 95 L 90 92 L 105 72"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="7"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
+
+        <!-- REAL arrowhead (filled triangle) pointing LEFT -->
+        <polygon points="155,145 105,130 122,175" fill="currentColor" />
       </svg>
 
       <div class="try-me">Try me</div>
