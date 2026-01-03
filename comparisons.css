@@ -7,7 +7,7 @@
   --stone: #e7dfd7; /* subtle borders */
   --ink: #2a2a2a;
   --muted: #595959;
-  --accent: #7b5cff; /* CTA accent */
+  --accent: #333; /* CTA accent */
 }
 
 body {
@@ -36,13 +36,6 @@ body {
 .site-header nav a {
   text-decoration: none;
   color: var(--ink);
-}
-.book-now {
-  background: var(--accent);
-  color: #fff;
-  padding: 0.55rem 0.9rem;
-  border-radius: 10px;
-  text-decoration: none;
 }
 
 /* ===========================
@@ -119,8 +112,16 @@ body {
   width: 100%;
   height: 100%;
   aspect-ratio: 4/3;
-  object-fit: cover;
+  object-fit: cover; /* default for the other images */
 }
+
+/* ONLY the 3rd logo (your company block) should not be cropped */
+.cmp-block:nth-of-type(4) .cmp-media img {
+  object-fit: contain;
+  padding: 18px;        /* gives breathing room inside the tile */
+  background: #fff;     /* keeps it clean if logo has transparency */
+}
+
 
 /* ===== Text card ===== */
 .cmp-card {
