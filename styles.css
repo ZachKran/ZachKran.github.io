@@ -24,6 +24,10 @@
   --link: #333; /* nav link color */
   --heroText: #2e2e2e; /* hero heading color */
   --heroOverlay: rgba(0, 0, 0, 0); /* optional overlay if you want later */
+  --fade1: rgba(251, 146, 60, 0.18); /* orange */
+  --fade2: rgba(59, 130, 246, 0.14); /* blue */
+  --fade3: rgba(167, 139, 250, 0.14); /* purple */
+  --fadeBase: #f7fafc; /* light base */
 }
 
 /* =========================
@@ -40,6 +44,10 @@
   --link: #333;
   --heroText: #2e2e2e;
   --heroOverlay: rgba(0, 0, 0, 0);
+  --fadeBase: #f6f2ea;
+  --fade1: rgba(251, 146, 60, 0.2);
+  --fade2: rgba(34, 197, 94, 0.12);
+  --fade3: rgba(59, 130, 246, 0.1);
 }
 
 :root[data-theme="blue"] {
@@ -53,6 +61,10 @@
   --link: #1e3a8a;
   --heroText: #0f172a;
   --heroOverlay: rgba(0, 0, 0, 0);
+  --fadeBase: #eef5ff;
+  --fade1: rgba(59, 130, 246, 0.22);
+  --fade2: rgba(167, 139, 250, 0.14);
+  --fade3: rgba(34, 197, 94, 0.1);
 }
 
 :root[data-theme="purple"] {
@@ -66,6 +78,10 @@
   --link: #4c1d95;
   --heroText: #1f1147;
   --heroOverlay: rgba(0, 0, 0, 0);
+  --fadeBase: #f6f1ff;
+  --fade1: rgba(167, 139, 250, 0.24);
+  --fade2: rgba(59, 130, 246, 0.12);
+  --fade3: rgba(251, 146, 60, 0.1);
 }
 
 :root[data-theme="green"] {
@@ -79,6 +95,10 @@
   --link: #14532d;
   --heroText: #052e16;
   --heroOverlay: rgba(0, 0, 0, 0);
+  --fadeBase: #ecfdf5;
+  --fade1: rgba(34, 197, 94, 0.22);
+  --fade2: rgba(59, 130, 246, 0.12);
+  --fade3: rgba(251, 146, 60, 0.1);
 }
 
 /* =========================
@@ -229,28 +249,13 @@ section {
   margin-bottom: 1rem;
 }
 
-/* =========================
-   Hero
-========================= */
-.hero {
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  background: url("beigeBG.png") center/cover no-repeat;
-  min-height: 30vh; /* adjust height as needed */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-}
-
 /* Optional overlay (currently transparent by default) */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   background: var(--heroOverlay);
+  pointer-events: none; /* ✅ IMPORTANT */
 }
 
 .hero-content {
@@ -589,4 +594,99 @@ section {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Smooth transitions when theme changes */
+body,
+header,
+.book-now,
+.blurb,
+.price-card,
+.team-member,
+.funky-heading {
+  transition: background-color 300ms ease, color 300ms ease,
+    border-color 300ms ease;
+}
+
+/* HERO: clean Wix-style */
+.hero {
+  position: relative; /* ✅ IMPORTANT */
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: radial-gradient(
+      600px 300px at 20% 25%,
+      var(--fade1),
+      transparent 60%
+    ),
+    radial-gradient(600px 300px at 80% 35%, var(--fade2), transparent 60%),
+    radial-gradient(700px 360px at 50% 85%, var(--fade3), transparent 60%),
+    linear-gradient(180deg, var(--fadeBase), var(--bg));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* ✅ IMPORTANT */
+  max-width: 900px;
+  padding: 2rem 1.5rem;
+}
+
+.hero-content h1 {
+  font-size: 5rem;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: var(--text);
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: rgba(0, 0, 0, 0.65);
+  margin-bottom: 1.8rem;
+}
+
+/* CTA button for hero */
+.hero-cta {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 250ms ease, transform 250ms ease;
+}
+
+.hero-cta:hover {
+  background: var(--accentHover);
+  transform: translateY(-1px);
+}
+
+.hero-note {
+  margin-top: 0.9rem;
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+  .hero-content p {
+    font-size: 1.05rem;
+  }
+}
+
+.theme-dots {
+  position: absolute;
+  top: 110px;
+  left: 60px;
+  z-index: 3; /* ✅ IMPORTANT */
 }
