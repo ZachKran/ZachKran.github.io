@@ -1,450 +1,260 @@
-/* Reset & Base */
+/* =========================
+   Reset & Base
+========================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
-  }
-  
-  body {
-    background-color: #f5f0e6; /* soft beige */
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  /* Header */
-  header {
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #e0d8c2; /* darker beige for navbar */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* shadow over beige */
-  }
-  
-  /* Logo */
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo img {
-    height: 40px;
-    margin-right: 10px;
-  }
-  
-  .logo span {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  /* Navigation */
-  nav {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #333;
-    position: relative;
-    padding: 4px;
-    transition: color 0.3s ease;
-  }
-  
-  nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #333;
-    transition: width 0.3s;
-  }
-  
-  nav ul li a:hover::after {
-    width: 100%;
-  }
-  
-  .book-now {
-    background-color: #333;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  .book-now:hover {
-    background-color: #555;
-  }
-  
-  /* Sections */
-  section {
-    margin: 3rem 1rem;
-    text-align: center;
-  }
-  
-  .funky-heading {
-    font-size: 2rem;
-    color: #2c2c2c;
-    border-bottom: 2px solid #c8b89d;
-    display: inline-block;
-    padding-bottom: 0.3rem;
-    margin-bottom: 1rem;
-  }
-  
-  /* Blurbs */
-  .blurbs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
-  .blurb,
-  .price-card,
-  .team-member {
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 10px;
-    width: 250px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeSlideUp 0.6s ease forwards;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .what-we-do {
-    background: #fff;
-    padding: 5rem 3rem;
-    border-radius: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    opacity: 0;
-    transform: translateY(300px);
-    animation: fadeSlideUp 0.6s ease forwards;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-
-  .blurb:hover,
-  .price-card:hover,
-  .team-member:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  }
-  
-  .blurb:nth-child(2),
-  .price-card:nth-child(2),
-  .team-member:nth-child(2) { animation-delay: 0.2s; }
-  
-  .blurb:nth-child(3),
-  .price-card:nth-child(3),
-  .team-member:nth-child(3) { animation-delay: 0.4s; }
-  
-  /* Pricing */
-  .price-options {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
-  .price {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 1rem 0;
-  }
-  
-  .guarantee {
-    margin-top: 2rem;
-    font-size: 1rem;
-  }
-  
-  /* Team */
-  .team-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin: 3rem 0;
-  }
-  
-  .team-member img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-  }
-  
-  .team-member h2 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Animation */
-  @keyframes fadeSlideUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .booking-section {
-    max-width: 480px;
-    margin: 3rem auto;
-    background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    text-align: left;
-  }
-  
-  .booking-section h1 {
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-    color: #2c2c2c;
-  }
-  
-  .booking-section label {
-    display: block;
-    margin: 1rem 0 0.3rem;
-    font-weight: 600;
-    color: #555;
-  }
-  
-  .booking-section input,
-  .booking-section textarea {
-    width: 100%;
-    padding: 0.5rem 0.7rem;
-    border: 1px solid #c8b89d;
-    border-radius: 5px;
-    font-size: 1rem;
-    resize: vertical;
-    transition: border-color 0.3s ease;
-  }
-  
-  .booking-section input:focus,
-  .booking-section textarea:focus {
-    outline: none;
-    border-color: #99945e;
-  }
-  
-  .booking-section .book-now {
-    margin-top: 1.8rem;
-    background-color: #333;
-    color: white;
-    padding: 0.7rem 1.2rem;
-    border: none;
-    border-radius: 6px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .booking-section .book-now:hover {
-    background-color: #555;
-  }
-  
-  .team-container {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-    padding: 2rem;
-  }
-  
-  .team-member {
-    background: #fffaf0;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 420px; /* wider panel */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .team-member:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-  }
-  
-  .custom-list {
-    text-align: left;
-    padding-left: 0;
-    margin-top: 1em;
-    list-style: none;
-  }
-  
-  .custom-list li {
-    position: relative;
-    padding-left: 1.6em;
-    margin-bottom: 10px;
-    font-size: 1rem;
-    color: #3d3d3d;
-    line-height: 1.5em;
-  }
-  
-  .custom-list li::before {
-    content: "▸";
-    position: absolute;
-    left: 0;
-    top: 0.1em;
-    color: #b28b5e;
-    font-size: 1.2em;
-    line-height: 1;
-  }
-  
-  .what-we-do {
-    max-width: 900px;
-    margin: 0 auto 4em;
-    padding: 2em;
-    background-color: #f8f8f8;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-  }
-  
-  .what-we-do .mission-statement {
-    font-size: 1.1rem;
-    margin-bottom: 1.5em;
-    line-height: 1.6;
-    color: #333;
-  }
-  
-  .stat-category {
-    margin-bottom: 2em;
-  }
-  
-  .stat-category h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5em;
-    color: #444;
-  }
-  
-  .custom-list {
-    list-style: none;
-    padding-left: 0;
-    text-align: left;
-  }
-  
-  .custom-list li {
-    position: relative;
-    padding-left: 1.6em;
-    margin-bottom: 0.8em;
-    font-size: 1rem;
-    color: #3d3d3d;
-  }
-  
-  .custom-list li::before {
-    content: "▸";
-    position: absolute;
-    left: 0;
-    top: 0.1em;
-    color: #b28b5e;
-    font-size: 1.2em;
-    line-height: 1;
-  }
-  
-  
-  .guarantee-section {
-    background-color: #f9f9f9;
-    padding: 3rem 1rem;
-    text-align: center;
-    border-top: 2px solid #eee;
-    margin-top: 2rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
 
-.guarantee-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+/* =========================
+   THEME TOKENS (DEFAULT)
+   (We only use variables in your existing selectors,
+   so your class names stay the same.)
+========================= */
+:root {
+  --bg: #f5f0e6; /* page background */
+  --nav: #e0d8c2; /* navbar background */
+  --text: #333; /* main text */
+  --card: #fff; /* card background */
+  --accent: #333; /* buttons + key accents */
+  --accentHover: #555; /* button hover */
+  --border: #c8b89d; /* borders / heading underline */
+  --link: #333; /* nav link color */
+  --heroText: #2e2e2e; /* hero heading color */
+  --heroOverlay: rgba(0, 0, 0, 0); /* optional overlay if you want later */
 }
 
-.guarantee-content {
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #333;
+/* =========================
+   THEMES (data-theme on :root)
+========================= */
+:root[data-theme="beige"] {
+  --bg: #f5f0e6;
+  --nav: #e0d8c2;
+  --text: #333;
+  --card: #fff;
+  --accent: #333;
+  --accentHover: #555;
+  --border: #c8b89d;
+  --link: #333;
+  --heroText: #2e2e2e;
+  --heroOverlay: rgba(0, 0, 0, 0);
 }
 
-.guarantee-content strong {
-    color: #000;
+:root[data-theme="blue"] {
+  --bg: #eef5ff;
+  --nav: #dbe9ff;
+  --text: #1f2937;
+  --card: #ffffff;
+  --accent: #2563eb;
+  --accentHover: #1d4ed8;
+  --border: #93c5fd;
+  --link: #1e3a8a;
+  --heroText: #0f172a;
+  --heroOverlay: rgba(0, 0, 0, 0);
 }
 
-.guarantee-content a {
-    color: #0073e6;
-    text-decoration: underline;
+:root[data-theme="purple"] {
+  --bg: #f6f1ff;
+  --nav: #ebe1ff;
+  --text: #1f2937;
+  --card: #ffffff;
+  --accent: #7c3aed;
+  --accentHover: #6d28d9;
+  --border: #c4b5fd;
+  --link: #4c1d95;
+  --heroText: #1f1147;
+  --heroOverlay: rgba(0, 0, 0, 0);
 }
 
-.guarantee-section {
-  background-color: #fafafa;
-  border-top: 2px solid #eee;
-  padding-top: 2rem;
-  margin-top: 2rem;
+:root[data-theme="green"] {
+  --bg: #ecfdf5;
+  --nav: #d1fae5;
+  --text: #1f2937;
+  --card: #ffffff;
+  --accent: #16a34a;
+  --accentHover: #15803d;
+  --border: #86efac;
+  --link: #14532d;
+  --heroText: #052e16;
+  --heroOverlay: rgba(0, 0, 0, 0);
 }
 
-.contact-email {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 1.1rem;
-  color: #333;
+/* =========================
+   Base Page
+========================= */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
 }
 
-.contact-email a {
-  color: #0073e6;
-  text-decoration: underline;
+/* =========================
+   Header
+========================= */
+header {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--nav);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.hero-banner {
-  background-color: #f4efe6; /* matches your site's beige */
-  background-image: url('your-background-image.jpg'); /* optional pattern or texture */
-  background-size: cover;
-  background-position: center;
-  min-height: 60vh; /* takes up a big chunk of the screen */
+/* Logo */
+.logo {
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
 }
 
-.hero-content h1 {
-  font-size: 3.5rem;
-  color: #2e2e2e;
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 1.5rem;
   font-weight: bold;
-  margin: 0.5rem 0;
 }
 
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
+/* Navigation */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--link);
+  position: relative;
+  padding: 4px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--link);
+  transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Book Now button */
+.book-now {
+  background-color: var(--accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.book-now:hover {
+  background-color: var(--accentHover);
+}
+
+/* =========================
+   Theme Dots (new)
+   (Won’t affect anything else)
+========================= */
+.theme-dots {
+  display: inline-flex;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  border: 2px solid rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  padding: 0;
+}
+
+.dot[data-theme="beige"] {
+  background: #fb923c;
+}
+.dot[data-theme="blue"] {
+  background: #3b82f6;
+}
+.dot[data-theme="purple"] {
+  background: #a78bfa;
+}
+.dot[data-theme="green"] {
+  background: #22c55e;
+}
+
+.dot:focus-visible {
+  outline: 3px solid rgba(0, 0, 0, 0.25);
+  outline-offset: 2px;
+}
+
+/* =========================
+   Sections
+========================= */
+section {
+  margin: 3rem 1rem;
+  text-align: center;
+}
+
+.funky-heading {
+  font-size: 2rem;
+  color: var(--text);
+  border-bottom: 2px solid var(--border);
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+/* =========================
+   Hero
+========================= */
 .hero {
   width: 100vw;
   margin: 0;
   padding: 0;
-  background: url('beigeBG.png') center/cover no-repeat;
+  background: url("beigeBG.png") center/cover no-repeat;
   min-height: 30vh; /* adjust height as needed */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
+}
+
+/* Optional overlay (currently transparent by default) */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--heroOverlay);
+}
+
+.hero-content {
+  position: relative; /* keep text above overlay */
 }
 
 .hero-content h1 {
@@ -452,11 +262,331 @@
   font-weight: bold;
   margin: 0.3rem 0;
   letter-spacing: 2px;
-  color: #2e2e2e;
+  color: var(--heroText);
 }
 
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 2rem;
   }
+}
+
+/* (Kept from your file; only used if you add .hero-banner in HTML) */
+.hero-banner {
+  background-color: var(--bg);
+  background-image: url("your-background-image.jpg"); /* optional */
+  background-size: cover;
+  background-position: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* =========================
+   Blurbs / Cards / Team Member panels
+========================= */
+.blurbs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.blurb,
+.price-card,
+.team-member {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideUp 0.6s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.what-we-do {
+  background: var(--card);
+  padding: 5rem 3rem;
+  border-radius: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(300px);
+  animation: fadeSlideUp 0.6s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blurb:hover,
+.price-card:hover,
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.blurb:nth-child(2),
+.price-card:nth-child(2),
+.team-member:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.blurb:nth-child(3),
+.price-card:nth-child(3),
+.team-member:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* =========================
+   Pricing
+========================= */
+.price-options {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.guarantee {
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+/* =========================
+   Team
+========================= */
+.team-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 3rem 0;
+}
+
+.team-member img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.team-member h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* You had a second .team-container/.team-member block later.
+   Keeping the intent but making it consistent with variables.
+   (Same class names, so no errors.)
+*/
+.team-container {
+  gap: 3rem;
+  padding: 2rem;
+}
+
+.team-member {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 420px; /* wider panel */
+}
+
+/* =========================
+   Booking
+========================= */
+.booking-section {
+  max-width: 480px;
+  margin: 3rem auto;
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.booking-section h1 {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.booking-section label {
+  display: block;
+  margin: 1rem 0 0.3rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.booking-section input,
+.booking-section textarea {
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.booking-section input:focus,
+.booking-section textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.booking-section .book-now {
+  margin-top: 1.8rem;
+  background-color: var(--accent);
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.booking-section .book-now:hover {
+  background-color: var(--accentHover);
+}
+
+/* =========================
+   Lists
+========================= */
+.custom-list {
+  text-align: left;
+  padding-left: 0;
+  margin-top: 1em;
+  list-style: none;
+}
+
+.custom-list li {
+  position: relative;
+  padding-left: 1.6em;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #3d3d3d;
+  line-height: 1.5em;
+}
+
+.custom-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  color: var(--border);
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+/* =========================
+   What We Do (second block from your file)
+   (Kept naming, uses variables)
+========================= */
+.what-we-do {
+  max-width: 900px;
+  margin: 0 auto 4em;
+  padding: 2em;
+  background-color: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.what-we-do .mission-statement {
+  font-size: 1.1rem;
+  margin-bottom: 1.5em;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.stat-category {
+  margin-bottom: 2em;
+}
+
+.stat-category h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
+  color: #444;
+}
+
+/* =========================
+   Guarantee Section
+========================= */
+.guarantee-section {
+  background-color: #fafafa;
+  border-top: 2px solid #eee;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.guarantee-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.guarantee-content {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.guarantee-content strong {
+  color: #000;
+}
+
+.guarantee-content a {
+  color: #0073e6;
+  text-decoration: underline;
+}
+
+.contact-email {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.contact-email a {
+  color: #0073e6;
+  text-decoration: underline;
+}
+
+/* =========================
+   Animation
+========================= */
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Your JS adds .visible but your CSS never used it.
+   This makes the fade-in work as intended without breaking anything.
+*/
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  animation: none; /* JS controls it */
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
