@@ -206,8 +206,8 @@ nav ul li a:hover::after {
 }
 
 .dot {
-  width: 14px;
-  height: 14px;
+  width: 20px;
+  height: 20px;
   border-radius: 999px;
   border: 2px solid rgba(0, 0, 0, 0.18);
   cursor: pointer;
@@ -684,9 +684,51 @@ header,
   }
 }
 
-.theme-dots {
+/* Keep theme-picker where it is */
+.theme-picker {
   position: absolute;
   top: 110px;
   left: 60px;
-  z-index: 3; /* ✅ IMPORTANT */
+  z-index: 9999;
+}
+
+.try-me {
+  position: absolute;
+  right: -120px;
+  bottom: -80px; /* a bit lower so it doesn't clash */
+  font-size: 1.35rem; /* ✅ bigger */
+  font-weight: 800; /* ✅ bolder */
+  color: var(--text);
+  opacity: 0.9;
+  white-space: nowrap;
+  z-index: 4;
+  letter-spacing: 0.2px;
+}
+
+.loopy-arrow {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+
+  /* ✅ anchor from below-right back toward dots */
+  right: -48px;
+  top: 24px;
+
+  width: 190px; /* ✅ bigger */
+  height: auto;
+
+  color: rgba(0, 0, 0, 0.45);
+
+  transform: rotate(180deg) scaleX(-1);
+}
+
+.theme-dots {
+  position: relative;
+  z-index: 3;
+}
+.theme-picker {
+  position: absolute;
+  top: 180px;
+  left: 160px;
+  z-index: 5;
 }

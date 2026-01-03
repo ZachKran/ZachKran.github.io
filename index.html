@@ -23,15 +23,54 @@
       </nav>
     </header>
 
-    <div class="theme-dots" aria-label="Theme picker">
-      <button class="dot" data-theme="beige" aria-label="Beige theme"></button>
-      <button class="dot" data-theme="blue" aria-label="Blue theme"></button>
-      <button
-        class="dot"
-        data-theme="purple"
-        aria-label="Purple theme"
-      ></button>
-      <button class="dot" data-theme="green" aria-label="Green theme"></button>
+    <div class="theme-picker">
+      <div class="theme-dots" aria-label="Theme picker">
+        <button
+          class="dot"
+          data-theme="beige"
+          aria-label="Beige theme"
+        ></button>
+        <button class="dot" data-theme="blue" aria-label="Blue theme"></button>
+        <button
+          class="dot"
+          data-theme="purple"
+          aria-label="Purple theme"
+        ></button>
+        <button
+          class="dot"
+          data-theme="green"
+          aria-label="Green theme"
+        ></button>
+      </div>
+
+      <svg class="loopy-arrow" viewBox="0 0 260 140" aria-hidden="true">
+        <!-- smooth loopy swoosh pointing LEFT -->
+        <path
+          d="
+      M 240 45
+      C 190 10, 120 18, 120 55
+      C 120 95, 180 95, 190 65
+      C 200 35, 130 30, 85 55
+      C 45 80, 65 110, 120 95
+    "
+          fill="none"
+          stroke="currentColor"
+          stroke-width="7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <!-- arrow head (LEFT) -->
+        <path
+          d="M 120 95 L 90 92 L 105 72"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+
+      <div class="try-me">Try me</div>
     </div>
 
     <!-- Full-Width Hero Section -->
