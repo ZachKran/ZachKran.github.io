@@ -23,6 +23,17 @@
       </nav>
     </header>
 
+    <div class="theme-dots" aria-label="Theme picker">
+      <button class="dot" data-theme="beige" aria-label="Beige theme"></button>
+      <button class="dot" data-theme="blue" aria-label="Blue theme"></button>
+      <button
+        class="dot"
+        data-theme="purple"
+        aria-label="Purple theme"
+      ></button>
+      <button class="dot" data-theme="green" aria-label="Green theme"></button>
+    </div>
+
     <!-- Full-Width Hero Section -->
     <section class="hero">
       <div class="hero-content">
@@ -73,7 +84,11 @@
     </section>
 
     <script>
+      /* ===============================
+     Fade-in on scroll (existing)
+  =============================== */
       const fadeEls = document.querySelectorAll(".fade-in");
+
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -85,7 +100,33 @@
         },
         { threshold: 0.2 }
       );
+
       fadeEls.forEach((el) => observer.observe(el));
+
+      /* ===============================
+     Theme switcher (NEW)
+  =============================== */
+      const root = document.documentElement;
+      const dots = document.querySelectorAll(".dot");
+
+      function setTheme(theme) {
+        root.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+      }
+
+      dots.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          setTheme(btn.dataset.theme);
+        });
+      });
+
+      // Load saved theme or default to beige
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        setTheme(savedTheme);
+      } else {
+        setTheme("beige");
+      }
     </script>
   </body>
 </html>
