@@ -614,7 +614,8 @@ header,
   width: 100vw;
   margin: 0;
   padding: 0;
-  min-height: 70vh;
+  min-height: calc(100vh - 80px);
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -847,12 +848,12 @@ header,
 
 .carousel::before {
   left: 0;
-  background: linear-gradient(to right, var(--bg), rgba(0,0,0,0));
+  background: linear-gradient(to right, var(--bg), rgba(0, 0, 0, 0));
 }
 
 .carousel::after {
   right: 0;
-  background: linear-gradient(to left, var(--bg), rgba(0,0,0,0));
+  background: linear-gradient(to left, var(--bg), rgba(0, 0, 0, 0));
 }
 
 /* Buttons */
@@ -871,8 +872,12 @@ header,
   z-index: 5;
 }
 
-.carousel-btn.prev { left: 40px; }
-.carousel-btn.next { right: 40px; }
+.carousel-btn.prev {
+  left: 40px;
+}
+.carousel-btn.next {
+  right: 40px;
+}
 
 .carousel-btn:hover {
   transform: translateY(-65%) scale(1.05);
