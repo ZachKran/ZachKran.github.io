@@ -40,7 +40,11 @@
   });
 
   const savedTheme = localStorage.getItem("theme");
-  setTheme(savedTheme || "beige");
+  if (savedTheme) {
+    root.setAttribute("data-theme", savedTheme);
+  } else {
+    root.setAttribute("data-theme", "beige"); // default without saving
+  }
 })();
 /* ===============================
    Website Carousel (3 cards visible, fade/scale)
@@ -85,8 +89,12 @@
     paint();
   }
 
-  function next() { goTo(index + 1); }
-  function prev() { goTo(index - 1); }
+  function next() {
+    goTo(index + 1);
+  }
+  function prev() {
+    goTo(index - 1);
+  }
 
   function start() {
     stop();
@@ -98,8 +106,14 @@
     timer = null;
   }
 
-  nextBtn?.addEventListener("click", () => { next(); start(); });
-  prevBtn?.addEventListener("click", () => { prev(); start(); });
+  nextBtn?.addEventListener("click", () => {
+    next();
+    start();
+  });
+  prevBtn?.addEventListener("click", () => {
+    prev();
+    start();
+  });
 
   dots.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -114,8 +128,14 @@
   carousel.addEventListener("focusout", start);
 
   carousel.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") { next(); start(); }
-    if (e.key === "ArrowLeft") { prev(); start(); }
+    if (e.key === "ArrowRight") {
+      next();
+      start();
+    }
+    if (e.key === "ArrowLeft") {
+      prev();
+      start();
+    }
   });
 
   // Init

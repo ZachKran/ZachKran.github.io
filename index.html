@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Websprout</title>
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          document.documentElement.setAttribute("data-theme", savedTheme);
+        }
+      })();
+    </script>
   </head>
 
   <body>
@@ -28,10 +36,22 @@
     <!-- Theme Picker (your existing) -->
     <div class="theme-picker" aria-label="Theme picker">
       <div class="theme-dots">
-        <button class="dot" data-theme="beige" aria-label="Beige theme"></button>
+        <button
+          class="dot"
+          data-theme="beige"
+          aria-label="Beige theme"
+        ></button>
         <button class="dot" data-theme="blue" aria-label="Blue theme"></button>
-        <button class="dot" data-theme="purple" aria-label="Purple theme"></button>
-        <button class="dot" data-theme="green" aria-label="Green theme"></button>
+        <button
+          class="dot"
+          data-theme="purple"
+          aria-label="Purple theme"
+        ></button>
+        <button
+          class="dot"
+          data-theme="green"
+          aria-label="Green theme"
+        ></button>
       </div>
 
       <svg class="loopy-arrow" viewBox="0 0 320 180" aria-hidden="true">
@@ -64,45 +84,86 @@
     </section>
 
     <!-- Website Carousel (after Hero, before Why WebSprout) -->
-    <section class="site-carousel fade-in" aria-label="Website examples carousel">
+    <section
+      class="site-carousel fade-in"
+      aria-label="Website examples carousel"
+    >
       <div class="carousel-shell">
         <h2 class="carousel-title">Recent Website Styles</h2>
         <p class="carousel-subtitle">
-          A quick peek at the kinds of sites we can build — clean, modern, and conversion-focused.
+          A quick peek at the kinds of sites we can build — clean, modern, and
+          conversion-focused.
         </p>
 
         <div class="carousel" data-carousel tabindex="0">
-          <button class="carousel-btn prev" type="button" aria-label="Previous slide" data-prev>
+          <button
+            class="carousel-btn prev"
+            type="button"
+            aria-label="Previous slide"
+            data-prev
+          >
             ‹
           </button>
 
           <div class="carousel-viewport">
             <div class="carousel-track" data-track>
               <figure class="carousel-slide" data-slide>
-                <img src="site1.png" alt="Example website design 1" loading="lazy" />
+                <img
+                  src="site1.png"
+                  alt="Example website design 1"
+                  loading="lazy"
+                />
                 <figcaption>Clean business homepage</figcaption>
               </figure>
 
               <figure class="carousel-slide" data-slide>
-                <img src="site2.png" alt="Example website design 2" loading="lazy" />
+                <img
+                  src="site2.png"
+                  alt="Example website design 2"
+                  loading="lazy"
+                />
                 <figcaption>Service / booking layout</figcaption>
               </figure>
 
               <figure class="carousel-slide" data-slide>
-                <img src="site3.png" alt="Example website design 3" loading="lazy" />
+                <img
+                  src="site3.png"
+                  alt="Example website design 3"
+                  loading="lazy"
+                />
                 <figcaption>Portfolio / gallery style</figcaption>
               </figure>
             </div>
           </div>
 
-          <button class="carousel-btn next" type="button" aria-label="Next slide" data-next>
+          <button
+            class="carousel-btn next"
+            type="button"
+            aria-label="Next slide"
+            data-next
+          >
             ›
           </button>
 
           <div class="carousel-dots" role="tablist" aria-label="Choose slide">
-            <button class="carousel-dot" type="button" aria-label="Go to slide 1" data-dot="0"></button>
-            <button class="carousel-dot" type="button" aria-label="Go to slide 2" data-dot="1"></button>
-            <button class="carousel-dot" type="button" aria-label="Go to slide 3" data-dot="2"></button>
+            <button
+              class="carousel-dot"
+              type="button"
+              aria-label="Go to slide 1"
+              data-dot="0"
+            ></button>
+            <button
+              class="carousel-dot"
+              type="button"
+              aria-label="Go to slide 2"
+              data-dot="1"
+            ></button>
+            <button
+              class="carousel-dot"
+              type="button"
+              aria-label="Go to slide 3"
+              data-dot="2"
+            ></button>
           </div>
         </div>
       </div>

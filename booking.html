@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="styles.css" />
     <!-- Page-specific styles -->
     <link rel="stylesheet" href="bookings.css" />
+    <script>
+      (function () {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          document.documentElement.setAttribute("data-theme", savedTheme);
+        }
+      })();
+    </script>
 
     <!-- Page script (defer so DOM is ready before it runs) -->
     <script src="booking.js" defer></script>

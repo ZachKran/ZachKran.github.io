@@ -2,17 +2,18 @@
    Palette & base
    =========================== */
 :root {
-  --sand: #f6f1e8; /* page background */
-  --paper: #faf7f3; /* card background */
-  --stone: #e7dfd7; /* subtle borders */
-  --ink: #2a2a2a;
-  --muted: #595959;
-  --accent: #333; /* CTA accent */
+  /* Map comparison page palette to your global theme variables */
+  --sand: var(--bg);
+  --paper: var(--card);
+  --stone: var(--border);
+  --ink: var(--text);
+  --muted: rgba(0, 0, 0, 0.65);
+  /* IMPORTANT: don't redefine --accent here (your global theme already has it) */
 }
 
 body {
-  background: var(--sand);
-  color: var(--ink);
+  background: var(--bg);
+  color: var(--text);
 }
 
 /* ===========================
@@ -118,10 +119,9 @@ body {
 /* ONLY the 3rd logo (your company block) should not be cropped */
 .cmp-block:nth-of-type(4) .cmp-media img {
   object-fit: contain;
-  padding: 18px;        /* gives breathing room inside the tile */
-  background: #fff;     /* keeps it clean if logo has transparency */
+  padding: 18px; /* gives breathing room inside the tile */
+  background: #fff; /* keeps it clean if logo has transparency */
 }
-
 
 /* ===== Text card ===== */
 .cmp-card {
