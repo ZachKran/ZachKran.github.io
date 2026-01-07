@@ -34,8 +34,8 @@
    THEMES (data-theme on :root)
 ========================= */
 :root[data-theme="neutral"] {
-  --bg: #b4caf7; /* clean light gray */
-  --nav: #eef1f5; /* soft header */
+  --bg: #d7faff65; /* clean light gray */
+  --nav: #ecf6f8; /* soft header */
   --text: #1f2937;
   --card: #ffffff;
   --accent: #2563eb; /* blue CTA still works */
@@ -45,14 +45,14 @@
   --heroText: #0f172a;
   --heroOverlay: rgba(0, 0, 0, 0);
 
-  --fadeBase: #f7f8fa;
-  --fade1: rgba(59, 130, 246, 0.12);
-  --fade2: rgba(167, 139, 250, 0.12);
-  --fade3: rgba(34, 197, 94, 0.1);
+  --fadeBase: #e8edf8;
+  --fade1: rgba(246, 247, 197, 0.432);
+  --fade2: rgba(236, 122, 147, 0.26);
+  --fade3: rgba(188, 154, 197, 0.404);
 }
 
 :root[data-theme="blue"] {
-  --bg: #5587cc;
+  --bg: #e0eeff;
   --nav: #dbe9ff;
   --text: #1f2937;
   --card: #ffffff;
@@ -62,10 +62,10 @@
   --link: #1e3a8a;
   --heroText: #0f172a;
   --heroOverlay: rgba(0, 0, 0, 0);
-  --fadeBase: #eef5ff;
-  --fade1: rgba(59, 130, 246, 0.22);
-  --fade2: rgba(167, 139, 250, 0.14);
-  --fade3: rgba(34, 197, 94, 0.1);
+  --fadeBase: #c5deff;
+  --fade1: rgb(233, 239, 248);
+  --fade2: rgba(167, 139, 250, 0.39);
+  --fade3: rgba(17, 189, 212, 0.199);
 }
 
 :root[data-theme="purple"] {
@@ -80,9 +80,9 @@
   --heroText: #1f1147;
   --heroOverlay: rgba(0, 0, 0, 0);
   --fadeBase: #f6f1ff;
-  --fade1: rgba(167, 139, 250, 0.24);
+  --fade1: rgba(186, 200, 231, 0.877);
   --fade2: rgba(59, 130, 246, 0.12);
-  --fade3: rgba(251, 146, 60, 0.1);
+  --fade3: rgba(251, 146, 60, 0.103);
 }
 
 :root[data-theme="green"] {
@@ -97,9 +97,9 @@
   --heroText: #052e16;
   --heroOverlay: rgba(0, 0, 0, 0);
   --fadeBase: #ecfdf5;
-  --fade1: rgba(34, 197, 94, 0.22);
-  --fade2: rgba(59, 130, 246, 0.12);
-  --fade3: rgba(251, 146, 60, 0.1);
+  --fade1: rgba(103, 186, 241, 0.22);
+  --fade2: rgba(240, 237, 215, 0.596);
+  --fade3: rgba(218, 231, 240, 0.712);
 }
 
 /* =========================
