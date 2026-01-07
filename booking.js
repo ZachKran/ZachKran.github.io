@@ -1,5 +1,5 @@
 // >>> Replace with your real destination email (e.g., "you@example.com")
-const RECIPIENT_EMAIL = "briankhoitran02@gmail.com";
+const RECIPIENT_EMAIL = "rootly.web@gmail.com";
 
 function buildMailto({ name, email, phone, message }) {
   const subject = encodeURIComponent(`Booking request from ${name}`);
