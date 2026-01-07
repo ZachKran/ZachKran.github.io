@@ -269,6 +269,65 @@ section {
   letter-spacing: 2px;
   color: var(--heroText);
 }
+.hero-mockup {
+  position: absolute;
+  right: 8vw;
+  bottom: 20vh;
+  border-radius: 18px;
+
+  width: min(380px, 28vw);
+  height: auto;
+
+  opacity: 0.6;
+  z-index: 1;
+
+  pointer-events: none; /* so it never blocks clicks */
+}
+.hero-seo {
+  position: absolute;
+  top: 120px; /* just below sticky header */
+  right: 10vw;
+
+  width: min(260px, 22vw);
+  height: auto;
+
+  border-radius: 16px;
+  opacity: 0.6;
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-waffles {
+  position: absolute;
+  left: 18vw;
+  bottom: 6vh;
+
+  width: min(360px, 30vw);
+  height: auto;
+
+  border-radius: 18px;
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.18);
+
+  opacity: 0.55;
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-contactform {
+  position: absolute;
+  left: 10vw;
+  bottom: 38vh;
+
+  width: min(120px, 10vw); /* narrower so it feels tall */
+  height: auto;
+
+  border-radius: 26px;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.22);
+
+  opacity: 0.55;
+  z-index: 2;
+  pointer-events: none;
+}
 
 @media (max-width: 768px) {
   .hero-content h1 {
@@ -639,11 +698,11 @@ header,
 }
 
 .hero-content h1 {
-  font-size: 5rem;
+  font-size: 6.5rem;
   line-height: 1.05;
   letter-spacing: -1px;
   color: var(--text);
-  font-weight: 800;
+  font-weight: 500;
   margin-bottom: 1.25rem;
 }
 
@@ -688,8 +747,8 @@ header,
 /* Keep theme-picker where it is */
 .theme-picker {
   position: absolute;
-  top: 110px;
-  left: 60px;
+  top: 160px;
+  left: 240px;
   z-index: 9999;
 }
 
@@ -727,12 +786,7 @@ header,
   position: relative;
   z-index: 3;
 }
-.theme-picker {
-  position: absolute;
-  top: 180px;
-  left: 160px;
-  z-index: 5;
-}
+
 /* ===============================
    3-UP Carousel (center active, sides faded)
 =============================== */
@@ -933,6 +987,21 @@ header,
 
   .carousel-btn.prev,
   .carousel-btn.next {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-mockup {
+    display: none;
+  }
+  .hero-seo {
+    display: none;
+  }
+  .hero-waffles {
+    display: none;
+  }
+  .hero-contactform {
     display: none;
   }
 }
