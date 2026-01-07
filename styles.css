@@ -38,8 +38,8 @@
   --nav: #ecf6f8; /* soft header */
   --text: #1f2937;
   --card: #ffffff;
-  --accent: #9ab4ec; /* blue CTA still works */
-  --accentHover: #9ab4ec;
+  --accent: #2563eb; /* blue CTA still works */
+  --accentHover: #1d4ed8;
   --border: #e5e7eb;
   --link: #1f2937;
   --heroText: #0f172a;
@@ -56,8 +56,8 @@
   --nav: #dbe9ff;
   --text: #1f2937;
   --card: #ffffff;
-  --accent: #2563eb;
-  --accentHover: #1d4ed8;
+  --accent: #0e42d3;
+  --accentHover: #0e42d3;
   --border: #93c5fd;
   --link: #1e3a8a;
   --heroText: #0f172a;
