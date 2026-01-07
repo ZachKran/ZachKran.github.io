@@ -43,7 +43,7 @@
   if (savedTheme) {
     root.setAttribute("data-theme", savedTheme);
   } else {
-    root.setAttribute("data-theme", "beige"); // default without saving
+    root.setAttribute("data-theme", "neutral"); // default without saving
   }
 })();
 /* ===============================

@@ -33,25 +33,26 @@
 /* =========================
    THEMES (data-theme on :root)
 ========================= */
-:root[data-theme="beige"] {
-  --bg: #f5f0e6;
-  --nav: #e0d8c2;
-  --text: #333;
-  --card: #fff;
-  --accent: #333;
-  --accentHover: #555;
-  --border: #c8b89d;
-  --link: #333;
-  --heroText: #2e2e2e;
+:root[data-theme="neutral"] {
+  --bg: #b4caf7; /* clean light gray */
+  --nav: #eef1f5; /* soft header */
+  --text: #1f2937;
+  --card: #ffffff;
+  --accent: #2563eb; /* blue CTA still works */
+  --accentHover: #1d4ed8;
+  --border: #e5e7eb;
+  --link: #1f2937;
+  --heroText: #0f172a;
   --heroOverlay: rgba(0, 0, 0, 0);
-  --fadeBase: #f6f2ea;
-  --fade1: rgba(251, 146, 60, 0.2);
-  --fade2: rgba(34, 197, 94, 0.12);
-  --fade3: rgba(59, 130, 246, 0.1);
+
+  --fadeBase: #f7f8fa;
+  --fade1: rgba(59, 130, 246, 0.12);
+  --fade2: rgba(167, 139, 250, 0.12);
+  --fade3: rgba(34, 197, 94, 0.1);
 }
 
 :root[data-theme="blue"] {
-  --bg: #eef5ff;
+  --bg: #5587cc;
   --nav: #dbe9ff;
   --text: #1f2937;
   --card: #ffffff;
@@ -214,9 +215,10 @@ nav ul li a:hover::after {
   padding: 0;
 }
 
-.dot[data-theme="beige"] {
-  background: #fb923c;
+.dot[data-theme="neutral"] {
+  background: #c9d7f3;
 }
+
 .dot[data-theme="blue"] {
   background: #3b82f6;
 }
