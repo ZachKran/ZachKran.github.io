@@ -1001,7 +1001,10 @@ header,
   .hero-mockup,
   .hero-seo,
   .hero-waffles,
-  .hero-contactform {
+  .hero-contactform,
+  .theme-picker,
+  .try-me,
+  .loopy-arrow {
     display: none;
   }
 }
