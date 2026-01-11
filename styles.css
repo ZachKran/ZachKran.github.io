@@ -314,7 +314,7 @@ section {
   right: 8vw;
   bottom: 20vh;
   border-radius: 18px;
-  width: min(380px, 28vw);
+  width: clamp(180px, 22vw, 380px);
   height: auto;
   opacity: 0.6;
   z-index: 1;
@@ -325,7 +325,7 @@ section {
   position: absolute;
   top: 120px;
   right: 10vw;
-  width: min(260px, 22vw);
+  width: clamp(140px, 18vw, 260px);
   height: auto;
   border-radius: 16px;
   opacity: 0.6;
@@ -337,7 +337,7 @@ section {
   position: absolute;
   left: 18vw;
   bottom: 6vh;
-  width: min(360px, 30vw);
+  width: clamp(180px, 24vw, 360px);
   height: auto;
   border-radius: 18px;
   box-shadow: 0 22px 45px rgba(0, 0, 0, 0.18);
@@ -350,7 +350,7 @@ section {
   position: absolute;
   left: 10vw;
   bottom: 38vh;
-  width: min(120px, 10vw);
+  width: clamp(80px, 8vw, 120px);
   height: auto;
   border-radius: 26px;
   box-shadow: 0 28px 60px rgba(0, 0, 0, 0.22);
