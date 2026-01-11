@@ -149,12 +149,11 @@ header {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-
 .logo {
   display: flex;
   align-items: center;
   text-decoration: none; /* remove underline */
-  color: inherit;        /* no link color */
+  color: inherit; /* no link color */
 }
 
 .logo *,
@@ -164,7 +163,6 @@ header {
   text-decoration: none; /* ensure nothing sneaks in */
   color: inherit;
 }
-
 
 .logo img {
   height: 40px;
@@ -181,8 +179,8 @@ nav {
   align-items: center;
   gap: 2rem;
 
-  flex: 1;            /* ✅ KEY: nav fills remaining header space */
-  margin-left: 2rem;  /* ✅ keeps links close to the logo */
+  flex: 1; /* ✅ KEY: nav fills remaining header space */
+  margin-left: 2rem; /* ✅ keeps links close to the logo */
 }
 
 /* Link list */
@@ -233,7 +231,6 @@ nav ul li a:hover::after {
   background-color: var(--accentHover);
 }
 
-
 /* =========================
    Theme Dots
 ========================= */
@@ -255,10 +252,18 @@ nav ul li a:hover::after {
   padding: 0;
 }
 
-.dot[data-theme="neutral"] { background: #c9d7f3; }
-.dot[data-theme="blue"]    { background: #3b82f6; }
-.dot[data-theme="purple"]  { background: #a78bfa; }
-.dot[data-theme="green"]   { background: #22c55e; }
+.dot[data-theme="neutral"] {
+  background: #c9d7f3;
+}
+.dot[data-theme="blue"] {
+  background: #3b82f6;
+}
+.dot[data-theme="purple"] {
+  background: #a78bfa;
+}
+.dot[data-theme="green"] {
+  background: #22c55e;
+}
 
 .dot:focus-visible {
   outline: 3px solid rgba(0, 0, 0, 0.25);
@@ -845,10 +850,10 @@ header,
   pointer-events: none;
 
   transition: opacity 500ms ease, transform 500ms ease, filter 500ms ease;
-  z-index: 2;          /* ✅ keep above overlays */
-  background: #fff;    /* ✅ prevents “see-through” if images have edges */
+  z-index: 2; /* ✅ keep above overlays */
+  background: #fff; /* ✅ prevents “see-through” if images have edges */
   border-radius: 18px; /* ✅ matches image */
-  overflow: hidden;    /* ✅ keeps corners clean */
+  overflow: hidden; /* ✅ keeps corners clean */
 }
 
 /* Image */
@@ -934,8 +939,12 @@ header,
   z-index: 5;
 }
 
-.carousel-btn.prev { left: 40px; }
-.carousel-btn.next { right: 40px; }
+.carousel-btn.prev {
+  left: 40px;
+}
+.carousel-btn.next {
+  right: 40px;
+}
 
 .carousel-btn:hover {
   transform: translateY(-65%) scale(1.05);
@@ -967,31 +976,24 @@ header,
 /* Mobile: show 1 */
 @media (max-width: 900px) {
   .carousel-viewport {
-    height: 320px;
+    height: auto;
+  }
+
+  .carousel-track {
+    height: auto;
   }
 
   .carousel-slide {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none; /* remove translateX centering */
     width: 92%;
+    margin: 0 auto;
   }
 
-  .carousel-slide img {
-    height: 240px;
-  }
-
-  .carousel-slide.is-left,
-  .carousel-slide.is-right {
-    opacity: 0;
-    transform: translateX(-50%) scale(0.95);
-  }
-
-  .carousel::before,
-  .carousel::after {
-    display: none;
-  }
-
-  .carousel-btn.prev,
-  .carousel-btn.next {
-    display: none;
+  .carousel-slide.is-active {
+    transform: none; /* prevents any scaling/shift */
   }
 }
 
