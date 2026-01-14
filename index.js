@@ -142,3 +142,25 @@
   goTo(0);
   start();
 })();
+
+// FAQ Accordion
+document.querySelectorAll(".faq-item").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const isOpen = btn.getAttribute("aria-expanded") === "true";
+    const panel = btn.nextElementSibling;
+
+    // close all
+    document
+      .querySelectorAll(".faq-item")
+      .forEach((b) => b.setAttribute("aria-expanded", "false"));
+    document.querySelectorAll(".faq-panel").forEach((p) => (p.hidden = true));
+
+    // open this one if it was closed
+    if (!isOpen) {
+      btn.setAttribute("aria-expanded", "true");
+      if (panel && panel.classList.contains("faq-panel")) {
+        panel.hidden = false;
+      }
+    }
+  });
+});

@@ -1008,3 +1008,76 @@ header,
     display: none;
   }
 }
+
+/* =========================
+   FAQ (Accordion)
+========================= */
+.faq {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  text-align: left;
+}
+
+.faq-title {
+  font-size: 2rem;
+  margin: 0 0 1.5rem;
+  color: var(--text);
+}
+
+.faq-list {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.faq-item {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 1.8rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.faq-question {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.faq-icon {
+  font-size: 2rem;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(-1px);
+}
+
+.faq-panel {
+  padding: 0 0 1.6rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.faq-panel p {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* When open, turn + into × (optional) */
+.faq-item[aria-expanded="true"] .faq-icon {
+  transform: rotate(45deg);
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .faq-question {
+    font-size: 1.2rem;
+  }
+  .faq-icon {
+    font-size: 1.6rem;
+  }
+}
