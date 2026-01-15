@@ -1,229 +1,240 @@
 /* ===========================
-   Palette & base
-   =========================== */
-:root {
-  /* Map comparison page palette to your global theme variables */
-  --sand: var(--bg);
-  --paper: var(--card);
-  --stone: var(--border);
-  --ink: var(--text);
-  --muted: rgba(0, 0, 0, 0.65);
-  /* IMPORTANT: don't redefine --accent here (your global theme already has it) */
-}
+   Comparison page (3-column)
+=========================== */
 
 body {
   background: var(--bg);
   color: var(--text);
 }
 
-/* ===========================
-   Header tidy (optional)
-   =========================== */
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1rem clamp(1rem, 3vw, 2rem); /* keep this as your site’s side padding */
-}
-.site-header nav ul {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.site-header nav a {
-  text-decoration: none;
-  color: var(--ink);
-}
-
-/* ===========================
-   Main wrapper
-   =========================== */
+/* page wrapper */
 .cmp-wrapper {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: clamp(1rem, 3vw, 2.5rem);
+  padding: clamp(1.25rem, 3vw, 2.75rem);
 }
 
-/* ===========================
-   INTRO (match navbar/content width)
-   =========================== */
-/* ===== Fix: make the intro card span the navbar/content width ===== */
-.cmp-intro {
-  max-width: 1100px; /* same as navbar/content */
-  margin: 0 auto clamp(1.5rem, 4vw, 2.6rem) auto;
-  padding: 0 clamp(1rem, 3vw, 2.5rem); /* same inner side padding as content */
+/* hero text */
+.cmp-hero {
+  text-align: center;
+  margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
 }
 
-.cmp-intro .cmp-card {
-  width: 100% !important; /* fill the 1100px container */
-  max-width: none !important; /* override the 560px limit */
-  margin: 0; /* no extra centering needed */
-  box-sizing: border-box; /* include padding in width */
-  text-align: center; /* keep hero text centered */
+.cmp-hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+  letter-spacing: -0.8px;
 }
 
-.cmp-intro h2 {
-  margin-bottom: 0.5rem;
-  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-}
-.cmp-intro p {
-  max-width: 1100px;
+.cmp-hero p {
   margin: 0 auto;
+  max-width: 62ch;
+  color: rgba(0, 0, 0, 0.65);
   line-height: 1.6;
-  color: var(--muted);
 }
 
-/* ===========================
-   Collage blocks (inspo style)
-   =========================== */
-.cmp-block {
+/* 3-column grid */
+.cmp-grid {
   display: grid;
-  grid-template-columns: 1.15fr 1fr; /* bigger image tile */
-  align-items: center;
-  gap: clamp(0.5rem, 1.6vw, 1rem); /* tighter gap between image & text */
-  margin-block: clamp(1.1rem, 3vw, 2rem); /* tighter row spacing */
+  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+}
+
+/* card */
+.cmp-col {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 22px;
+  padding: 1.4rem 1.25rem;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   position: relative;
 }
 
-/* Alternate layout for middle row */
-.cmp-block.cmp-reverse {
-  grid-template-columns: 1fr 1.15fr;
-}
-.cmp-reverse .cmp-media {
-  order: 2;
-}
-.cmp-reverse .cmp-card {
-  order: 1;
+/* top area */
+.cmp-top {
+  text-align: center;
 }
 
-/* ===== Image tile ===== */
-.cmp-media {
-  position: relative;
-  overflow: hidden;
-  border-radius: 18px;
-  background: #fff;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-}
-.cmp-media img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover; /* default for the other images */
-}
-
-/* ONLY the 3rd logo (your company block) should not be cropped */
-.cmp-block:nth-of-type(4) .cmp-media img {
+.cmp-logo {
+  width: 64px;
+  height: 64px;
   object-fit: contain;
-  padding: 18px; /* gives breathing room inside the tile */
-  background: #fff; /* keeps it clean if logo has transparency */
+  display: block;
+  margin: 0 auto 0.75rem;
 }
 
-/* ===== Text card ===== */
-.cmp-card {
-  background: var(--paper);
-  border: 1px solid var(--stone);
+.cmp-col h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.35rem;
+  letter-spacing: -0.2px;
+}
+
+.cmp-price {
+  margin: 0.1rem 0 0;
+  font-size: 1.05rem;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.cmp-sub {
+  margin: 0.65rem auto 0;
+  max-width: 36ch;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.5;
+  font-size: 0.98rem;
+}
+
+/* features list */
+.cmp-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.cmp-features li {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 14px;
-  padding: clamp(1rem, 3vw, 1.6rem);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.06);
-  color: var(--ink);
-  position: relative;
-  z-index: 2;
-  max-width: 560px; /* normal cards keep this max width */
-}
-.cmp-card h2 {
-  margin: 0 0 0.4rem 0;
-  font-weight: 700;
-  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
-  letter-spacing: 0.2px;
-}
-.cmp-card p {
-  margin: 0 0 0.75rem 0;
-  color: var(--muted);
-  line-height: 1.6;
-}
-.cmp-points {
-  margin: 0.35rem 0 0 0;
-  padding-left: 1.1rem;
-  color: var(--muted);
-}
-.cmp-points li {
-  margin: 0.25rem 0;
+  padding: 0.75rem 0.85rem;
+  line-height: 1.35;
 }
 
-/* Subtle accent for your offer */
-.cmp-card.cmp-accent {
-  background: #fff;
-  border-color: var(--stone);
+/* subtle “good/bad” emphasis */
+.cmp-pro {
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
-/* CTA */
+.cmp-con {
+  opacity: 0.85;
+}
+
+/* footer buttons */
+.cmp-footer {
+  margin-top: auto;
+  padding-top: 0.25rem;
+  display: flex;
+  justify-content: center;
+}
+
+.cmp-link {
+  color: rgba(0, 0, 0, 0.55);
+  text-decoration: none;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+/* Featured Rootly column */
+.cmp-featured {
+  background: rgba(255, 255, 255, 0.75);
+  border: 2px solid rgba(0, 0, 0, 0.14);
+  transform: translateY(-8px);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.14);
+}
+
+.cmp-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+}
+
+/* Rootly CTA */
 .cmp-cta {
   display: inline-block;
-  margin-top: 0.9rem;
-  padding: 0.6rem 0.95rem;
+  width: 100%;
+  text-align: center;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
   background: var(--accent);
   color: #fff;
   text-decoration: none;
-  border-radius: 10px;
-  font-weight: 600;
-  transition: transform 0.08s ease, opacity 0.12s ease;
+  font-weight: 800;
+  transition: transform 0.12s ease, opacity 0.12s ease;
 }
+
 .cmp-cta:hover {
   opacity: 0.92;
 }
+
 .cmp-cta:active {
   transform: translateY(1px);
 }
 
-/* ===== Overlap effect (desktop) ===== */
-@media (min-width: 900px) {
-  .cmp-block:not(.cmp-reverse) .cmp-card {
-    margin-left: -50px;
-    transform: translateY(-6px);
-  }
-  .cmp-block.cmp-reverse .cmp-card {
-    margin-right: -50px;
-    transform: translateY(-6px);
-  }
-  .cmp-block:not(.cmp-reverse) .cmp-media {
-    transform: translateX(6px);
-  }
-  .cmp-block.cmp-reverse .cmp-media {
-    transform: translateX(-6px);
-  }
+/* note */
+.cmp-note {
+  margin-top: 1.25rem;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.95rem;
 }
 
-/* ===== Fade-in on scroll ===== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===== Responsive stack ===== */
-@media (max-width: 899.98px) {
-  .cmp-block,
-  .cmp-block.cmp-reverse {
+/* responsive: stack */
+@media (max-width: 950px) {
+  .cmp-grid {
     grid-template-columns: 1fr;
   }
-  .cmp-media,
-  .cmp-card {
-    transform: none !important;
-    margin: 0;
+  .cmp-featured {
+    transform: none;
   }
-  .cmp-intro {
-    padding: 0 1.25rem;
-  }
-  .cmp-intro p {
-    max-width: 32ch;
+}
+
+/* ===========================
+   Highlighted comparison note
+=========================== */
+
+.cmp-highlight {
+  margin: 1.75rem auto 0;
+  padding: 1.2rem 1.4rem;
+  max-width: 900px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0.6)
+  );
+
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.1);
+
+  text-align: center;
+}
+
+.cmp-highlight p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.cmp-highlight strong {
+  color: var(--text);
+  font-weight: 800;
+}
+
+.cmp-highlight span {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+/* Mobile tweak */
+@media (max-width: 768px) {
+  .cmp-highlight {
+    padding: 1rem 1.1rem;
   }
 }
